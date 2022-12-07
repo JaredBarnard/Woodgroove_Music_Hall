@@ -21,7 +21,12 @@ If the logo is in the navigation bar, you will find more logo styles lower down 
 
 
 p{
+  /* margin-top: -50px; */
+  /* position: relative;
+  right: auto; */
+  font-size: 1em;
   line-height: 1.4;
+  margin-bottom: -20px;
 }
 
 .wrapper{
@@ -33,7 +38,6 @@ p{
 img{
   max-width: 100%;
 }
-
 
 /* NOTE Add and change colors and font families */
 h1{
@@ -48,7 +52,7 @@ h1{
 h2{
   font-weight: 600;
   font-size: 1em;
-  text-align: center
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 30.5px;
   padding-left: 35px;
@@ -56,34 +60,187 @@ h2{
 }
 
 h3{
-
+  font-weight: 800;
+  font style:bold;
+  font-size: 1.5em;
+  text-align: right;
+  margin-right: 40px;
+  font-family: 'Montserrat', sans-serif,;
+  font-weight: 3000;
 }
 
+h4{
+  font-weight: 600;
+  font-size: 1em;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif,;
+  font-style: oblique;
+  margin-right: 40px;
+}
+
+h5{
+  font-weight: 800;
+  font style:bold;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif,;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h6{
+  font-weight: 800;
+  font style:bold;
+  font-size: 1.35em;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif,;
+  font-weight: bold;
+  margin-bottom: -20px;
+  margin-top: -30px;
+}
+
+.button{
+  padding-left: 20px;
+}
+
+.root{
+  padding-left: 300px;
+}
 .hero-homepage {
   position: relative;
   text-align: center;
   color: white;
+  margin-bottom: -10px;
 }
 
 .hero-homepage img{
-    position:relative;
-    text-align: center;
-    color:white;
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    /* https://www.w3schools.com/cssref/css3_pr_object-fit.php */
-    background: darkgrey;
+  position:relative;
+
+  text-align: center;
+  height:30vh;
+  color:white;
+  width: 100%;
+  object-fit: cover;
+  /* https://www.w3schools.com/cssref/css3_pr_object-fit.php */
+  background: darkgrey;
 
 }
 
 .centered{
   position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
+.flex-container{
+  display:flex;
+  flex-wrap: wrap;
+/*Use flex-wrap when you want items to wrap around each other */
+  width:90%;
+/* Because we have flex wrap and grow being used, this height is really just the minimum height.    */
+  margin-right:auto;
+  margin-left:auto;
+  /* Center the flex container with margin auto and by defining a width */
+}
+
+/* Styles for the flex items below */
+.flex-container div{
+  /* A space between flex-container and div means that every div inside of the flex-container will have these properties */
+  flex-grow:3;
+  /*  flex-grow allows boxes to be bigger to fill space */
+  width:400px;
+  /* Change width based on how much space you need OR use min-width */
+}
+.flex-container p{
+  text-align:center;
+  padding:10px;
+  line-height:2;
+  /*  This line-hight  measurement helps the text to be centered vertically: https://www.w3schools.com/css/css_align.asp */
+  vertical-align: middle;
+}
+
+/* START MOBILE FORM STYLES */
+    .form-container{
+/*       TO CENTER add AUTO for margin right and left*/
+      margin: 20px auto;
+/*  WIDTH 100%  FOR MOBILE DEVICES*/
+      width:90%;
+      display:block;
+      font-size:1em;
+    }
+    form p{
+      margin-bottom:5px;
+
+    }
+    label{
+      display:block;
+    }
+    #newsletter input{
+      display:inline;
+      width:auto;
+    }
+    input{
+      /* FOR MOBILE use WIDTH:100% */
+      width:100%;
+      padding:1.7%;
+      margin:1.5% 0;
+      font-size: 1em;
+      border-radius: 4px;
+      border:1px solid #ccc;
+      box-sizing: border-box;
+    }
+    textarea{
+      min-height:100px;
+       /* FOR MOBILE use WIDTH:100% */
+      width: 100%;
+      padding: 2%;
+      margin: 1.5% 0;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button{
+      /* CHANGED COLORS bellow */
+      background: #E1731F;
+      border: 1px solid #E1731F;
+      /* Rounded corners */
+      border-radius: 4px;
+      /* Text color */
+      color:white;
+      margin-top: 116px;
+      margin-bottom: 0px;
+      margin-left: 90px;
+      padding:9px 81px;
+      font-size: 1.1em;
+    }
+
+  /*        END MOBILE FORM STYLES */
+
+
+
+
+
+    @media only screen and (min-width: 1000px) {
+      .hero-homepage img{
+
+      }
+ /*         START DESKTOP FORM STYLES */
+      .form-container{
+ /*         CHANGE WIDTH of FORM TO YOUR PREFERENCE */
+        width:50%;
+      }
+      input{
+         /* CHANGE WIDTH TO YOUR PREFERENCE */
+        width:60%;
+      }
+      button{
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+    }
 /* START Images with a caption along the bottom ------ */
 figure{
 	margin: auto 0;
@@ -91,23 +248,27 @@ figure{
 }
 figure img{
     width:50%;
+    padding-left: 40px;
     /* This will keep the image and the caption the same width. If your photo looks pixelated, you will need a hi-res image */
 }
 figcaption{
 	position: absolute;
-	bottom:134px;
+	bottom:25px;
 	background: rgba(85,85,85,0.70);
 	height: 30px;
-	width: 46%;
+	width: 65%;
 	color:white;
 	padding:2%;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 /* END Images with a caption along the bottom styles ---*/
 
-
+.shop{
+  display: block;
+  align-items: center;
+}
 
 /* START Image with text on the other side styles -------- */
 .image-on-left{
@@ -115,12 +276,10 @@ figcaption{
     margin: 50px auto;
     text-align: left;
 }
-.image-on-left img{
+.image-on-left figure{
     float: left;
     /* NOTE Position of image */
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+    width:50%;
     margin-right: 30px;
     margin-bottom: 10px;
 }
@@ -132,13 +291,15 @@ figcaption{
 .image-on-right img{
     float: right;
     /* NOTE Position of image */
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+
     margin-left: 30px;
     margin-bottom: 10px;
 }
-.clear-float{
+section div{
+  float:right;
+  margin-right: 40px;
+}
+.clear-float::after{
     display: table;
     content: "";
     clear: both;
@@ -158,6 +319,10 @@ footer{
   background: black;
   /* Footer background color */
   color:white;
+  height: 100px;
+}
+footer .fa{
+  font-size: 2em;
 }
 footer p{
     text-align: center;
@@ -269,7 +434,7 @@ nav a{
   display: block;
 }
 .navcontainer {
-  max-width: 960px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 10px;
 }
@@ -311,9 +476,7 @@ nav a{
   .image-on-left img{
     float: left;
     /* Larger image for larger screens */
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
+
     margin-right: 40px;
   }
   .image-on-right{
@@ -323,9 +486,7 @@ nav a{
   }
   .image-on-right img{
     float: right;
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
+
     margin-left: 40px;
   }
   /* END Image on one side and text on the other side */
@@ -361,12 +522,12 @@ nav a{
       display: block;
       box-shadow: none;
       border: none;
-      float: right;
+      /* float: right; */
       /* float:left; */
       /* NOTE LINKS POSITION to the left*/
-      /* text-align: center; */
+      text-align: center;
       /* NOTE LINKS POSITION center*/
-      text-align: right;
+      /* text-align: right; */
       /* NOTE LINKS POSITION to the right*/
       position: static;
     }

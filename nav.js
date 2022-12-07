@@ -17,7 +17,7 @@ $(document).ready(function() {
 		bindEvents: function() {
 			var width = window.innerWidth;
 
-			if (width < 600) {
+			if (width < 700) {
 				this.navBars.click(this.animate.bind(this));
 				this.navMenu.hide();
 				this.xBxHack[0].checked = false;
